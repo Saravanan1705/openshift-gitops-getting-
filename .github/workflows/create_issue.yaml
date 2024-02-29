@@ -19,7 +19,7 @@ jobs:
           JIRA_BASE_URL: https://prodevans-saravanann.atlassian.net
         run: |
           curl -X POST \
-            -H "Authorization: Basic $(echo -n ${{ secrets.JIRA_API_TOKEN1 }})" \
+            -H "Authorization: Basic c2FyYXZhbmFuLm5AcHJvZGV2YW5zLmNvbTpBVEFUVDN4RmZHRjBXZUpSakltb0tfY1phSy15M1Z5NDBkNXFGTEZuZjNwcjVJX29KcGV0X3o3Z3ZJSnpPS29HWUhaeE5ab0ZVZUtqbXJTcHNYLUlxWnBCTFRYcFVCSVVaZHhrbkhWQTNzZ0FDem1jejhtRUhfXzMxVXl4MkVMNnA1UFV4YWh2blpVUjJTQmp3aV9vdC1VemluOEplMnNBbG56MFQ2WmlyS216aTBRX25jdndFVWc9OTFFQUI2MDg=" \
             -H "Content-Type: application/json" \
             -d '{
               "fields": {
