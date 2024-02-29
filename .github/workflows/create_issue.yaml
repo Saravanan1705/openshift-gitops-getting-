@@ -15,11 +15,11 @@ jobs:
 
       - name: Create Jira Issue
         env:
-          JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
+          JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN1 }}
           JIRA_BASE_URL: https://prodevans-saravanann.atlassian.net
         run: |
           curl -X POST \
-            -H "Authorization: Basic $(echo -n ${{ secrets.JIRA_API_TOKEN }} | base64)" \
+            -H "Authorization: Basic $(echo -n ${{ secrets.JIRA_API_TOKEN1 }})" \
             -H "Content-Type: application/json" \
             -d '{
               "fields": {
