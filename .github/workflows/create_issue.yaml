@@ -33,4 +33,4 @@ jobs:
                 }
               }
             }' \
-            "https://prodevans-saravanann.atlassian.net/rest/api/2/issue/"
+            "https://prodevans-saravanann.atlassian.net/rest/api/2/issue/" 
