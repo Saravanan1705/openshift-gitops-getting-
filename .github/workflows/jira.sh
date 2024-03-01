@@ -1,5 +1,5 @@
 username="saravanan.n@prodevans.com"
-password="ATATT3xFfGF0L1Dgdv1SZT0q6roQ9SpSKPP5kIawCjYSms-qMSIYPs-DOdBqk_vitNRmjgQWs7yjPv_tQ9Gf7Cw6baxf0j6DPP69OdiPnuQnRLx5_aLL_2xK-XwBy6DQJpzbZhQUP1mzXlHGIc37vWunNn8YpIAKMlstycubi66WWstXDOvJAoY=400B5274"
+password="ATATT3xFfGF01UeSY0tgiUig_HdWv-xlhDD_YihcDn4v8AhmOylqwmI5PbLM7LDJk--i8wyoB5KRyqOHYI6ONtQQOplzdg5J6TWXQF61dCNRrmNcJeyzNuqx-avce-YfcBQAKYzKMIBN66yLXNFMa_GfmMDZ1icSNthcrqHjg06PlOPr0xvJRRw=58E6D82A"
 
 curl -u "${username}:${password}" --basic -L 'https://prodevans-saravanann.atlassian.net/rest/api/2/issue/' \
 --header 'Content-Type: application/json' \
