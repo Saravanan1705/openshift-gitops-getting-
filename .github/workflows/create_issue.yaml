@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main 
-      
+
 jobs:
   create-jira-issue:
     runs-on: ubuntu-latest
@@ -15,21 +15,22 @@ jobs:
 
       - name: Create Jira Issue
         env:
-          JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
+          JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN1 }}
           JIRA_BASE_URL: https://prodevans-saravanann.atlassian.net
         run: |
-          curl --location 'https://prodevans-saravanann.atlassian.net/rest/api/2/issue/' \
-          --header 'Content-Type: application/json' \
-          --header 'Authorization: Basic c2FyYXZhbmFuLm5AcHJvZGV2YW5zLmNvbTpBVEFUVDN4RmZHRjAxVWVTWTB0Z2lVaWdfSGRXdi14bGhERF9ZaWhjRG40djhBaG1PeWxxd21JNVBiTE03TERKay0taTh3eW9CNUtSeXFPSFlJNk9OdFFRT3BsemRnNUo2VFdYUUY2MWRDTlJybU5jSmV5ek51cXgtYXZjZS1ZZmNCUUFLWXpLTUlCTjY2eUxYTkZNYV9HZm1NRFoxaWNTTnRoY3JxSGpnMDZQbE9QcjB4dkpSUnc9NThFNkQ4MkE=' \
-          --data '{
+          curl -X POST \
+            -H "Authorization: Basic c2FyYXZhbmFuLm5AcHJvZGV2YW5zLmNvbTpBVEFUVDN4RmZHRjBXZUpSakltb0tfY1phSy15M1Z5NDBkNXFGTEZuZjNwcjVJX29KcGV0X3o3Z3ZJSnpPS29HWUhaeE5ab0ZVZUtqbXJTcHNYLUlxWnBCTFRYcFVCSVVaZHhrbkhWQTNzZ0FDem1jejhtRUhfXzMxVXl4MkVMNnA1UFV4YWh2blpVUjJTQmp3aV9vdC1VemluOEplMnNBbG56MFQ2WmlyS216aTBRX25jdndFVWc9OTFFQUI2MDg=" \
+            -H "Content-Type: application/json" \
+            -d '{
               "fields": {
                 "project": {
                   "key": "KAN"
                 },
-                "summary": "Issue",
+                "summary": "Issue ",
                 "description": "Detailed description of your issue",
                 "issuetype": {
                   "name": "Task"
                 }
               }
-            }' 
+            }' \
+            "https://prodevans-saravanann.atlassian.net/rest/api/2/issue/"
