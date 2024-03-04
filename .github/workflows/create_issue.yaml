@@ -1,36 +1,17 @@
-name: Create Jira Issue
-
+name: Jira Approval
 on:
   push:
-    branches:
-      - main 
-
+    branches-ignore:
+      - main
 jobs:
-  create-jira-issue:
+  job:
+    name: Ticket Labels
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Create Jira Issue
-        env:
-          JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN1 }}
-          JIRA_BASE_URL: https://prodevans-saravanann.atlassian.net
-        run: |
-          curl -X POST \
-            -H "Authorization: Basic c2FyYXZhbmFuLm5AcHJvZGV2YW5zLmNvbTpBVEFUVDN4RmZHRjBXZUpSakltb0tfY1phSy15M1Z5NDBkNXFGTEZuZjNwcjVJX29KcGV0X3o3Z3ZJSnpPS29HWUhaeE5ab0ZVZUtqbXJTcHNYLUlxWnBCTFRYcFVCSVVaZHhrbkhWQTNzZ0FDem1jejhtRUhfXzMxVXl4MkVMNnA1UFV4YWh2blpVUjJTQmp3aV9vdC1VemluOEplMnNBbG56MFQ2WmlyS216aTBRX25jdndFVWc9OTFFQUI2MDg=" \
-            -H "Content-Type: application/json" \
-            -d '{
-              "fields": {
-                "project": {
-                  "key": "KAN"
-                },
-                "summary": "Issue ",
-                "description": "Detailed description of your issue",
-                "issuetype": {
-                  "name": "Task"
-                }
-              }
-            }' \
-            "https://prodevans-saravanann.atlassian.net/rest/api/2/issue/"
+      - name: Jira Ticket Labels
+        uses: g2crowd/required-approvals-action@v1.6
+        with:
+          commit_message: ${{ github.event.commits[0]['message'] }}
+          jira_user: saravanan.n@prodevans.com
+          jira_token: ATATT3xFfGF0d1dFcWY4SE882QX9SvAmvEf8CpvnHx5PhXqJVOcyyIfOf2Maj18laD060NWhHPE1wrJMsU4YinQNKCrRjb45T3xJ4yg18bK5oR36xepYPjbmfVu_88PRYTcLWyHA74n3eVUlb9O1qf23vR59jYWZ2Q96CaOzf6A6U9hv8nCR6XU=7C02915B
+          jira_url: https://prodevans-saravanann.atlassian.net
