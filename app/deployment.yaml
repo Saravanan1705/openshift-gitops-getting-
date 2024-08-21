@@ -23,7 +23,7 @@ spec:
       containers:
       - name: spring-petclinic
         imagePullPolicy: Always
-        image: quay.io/service-binding/spring-petclinic:latest
+        image: docker.io/ashiskumarnahak/ashis:latest
         livenessProbe:
           failureThreshold: 3
           httpGet:
